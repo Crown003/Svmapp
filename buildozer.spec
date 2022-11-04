@@ -1,7 +1,7 @@
 [app]
 
 # (str) Title of your application
-title = Svm 
+title = Svm
 
 # (str) Package name
 package.name = svmapplication
@@ -13,16 +13,16 @@ package.domain = org.kivymd
 source.dir = .
 
 # (list) List of inclusions using pattern matching
-source.include_patterns = assets/*
+#source.include_patterns = 
 
 # (str) Presplash of the application
-presplash.filename = %(source.dir)s/assets/images/presplash.png
+#presplash.filename = %(source.dir)s/assets/images/presplash.png
 
 # (str) Icon of the application
-icon.filename = %(source.dir)s/assets/images/logo.png
+#icon.filename = %(source.dir)s/assets/images/logo.png
 
 # (string) Presplash background color (for new android toolchain)
-android.presplash_color = #000000
+#android.presplash_color = #000000
 
 # (list) Source files to include (let empty to include all the files)
 source.include_exts = py, gif, png, jpg, jpeg, ttf, kv, json, txt, md
@@ -37,11 +37,11 @@ version = 0.0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements =  python3,Kivy==2.0.0,akivymd==1.2.1,android==1.0,DateTime==4.4,kivymd==0.104.2,KivyMD-Components==0.1.6,kivymd-extensions==1.0.0,kivymd-extensions.akivymd==1.2.6,pillow==9.0.0,plyer==2.0.0,pymongo==3.12.1,requests==2.23.0
+requirements =  python3,multitasking,threading,jnius,Kivy==2.0.0,akivymd==1.2.1,android==1.0,DateTime==4.4,kivymd==0.104.2,KivyMD-Components==0.1.6,kivymd-extensions==1.0.0,kivymd-extensions.akivymd==1.2.6,pillow==9.0.0,plyer==2.0.0,pymongo==3.12.1,requests==2.23.0
 
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
-orientation = portrait
+orientation = all
 
 # (bool) Indicate if the application should be fullscreen or not
 fullscreen = 0
