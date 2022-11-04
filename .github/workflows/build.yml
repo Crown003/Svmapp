@@ -33,11 +33,10 @@ jobs:
         id: buildozer
         with:
           command: buildozer android debug
-          master
+           buildozer_version: master
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
           name: packagej7uyghd3
           path: ${{ steps.buildozer.outputs.filename }}
-7mn
