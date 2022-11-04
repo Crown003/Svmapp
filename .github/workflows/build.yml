@@ -33,7 +33,7 @@ jobs:
         id: buildozer
         with:
           command: buildozer android debug
-          jjjih master
+          master
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
