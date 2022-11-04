@@ -9,7 +9,6 @@ from kivymd_extensions.akivymd.uix.badgelayout import AKBadgeLayout
 from kivymd_extensions.akivymd.uix.charts import AKBarChart
 from libs.Widget.sqrCard import Icons
 from Modules.db import download_file,collection
-from Modules.pdfview import PdfView
 from libs.root import Root
 import threading
 from kivymd.uix.dialog import MDDialog
@@ -25,6 +24,7 @@ multitasking.set_max_threads(10)
 
 if  platform == "android":
 	from Modules.AndroidAPI import statusbar#, android_dark_mode
+	from Modules.pdfview import PdfView
 
 User_obj = ""
 ######

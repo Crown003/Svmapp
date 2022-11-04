@@ -4,11 +4,13 @@ from kivy.uix.screenmanager import Screen
 from kivymd.uix.filemanager import MDFileManager
 from Modules.db import collection
 import io
+from kivy import platform
 from PIL import Image
 from kivymd.uix.snackbar import Snackbar
 from kivymd.toast import toast
 
-
+if platform != "android":
+	from plyer import filechooser
 
 class Profile(Screen):	
 	def __init__(self, **kwargs):
@@ -17,18 +19,29 @@ class Profile(Screen):
 		self.manager_open = False
 		self.file_manager = MDFileManager(exit_manager=self.exit_manager,select_path=self.select_path,preview=True,)
 	def file_manager_open(self):
-		self.file_manager.show('/storage/emulated/0/')  # output manager to the screen
-		self.manager_open = True		
+		if platform == "android":
+			self.file_manager.show('/storage/emulated/0/')  # output manager to the screen
+			self.manager_open = True	
+		else:
+			filechooser.open_file(on_selection= self.select_path)
+		
 	def select_path(self, path):
-		self.exit_manager(path)
+		if platform != "android":
+			if path:
+				with open("Modules//loginfo.txt","r") as f:
+					logged = f.read().split(",")
+					self.upload_image_details = [logged[7],path[0]]
+					self.upload_profile_photo(self.upload_image_details[0],self.upload_image_details[1])	
+		else:	
+			self.exit_manager(path)
+	
 	def exit_manager(self, *args):
-		if args[0] != "/storage/emulated/0/":
-			self.manager_open = False
+		self.manager_open = False
+		if args[0] != 1:
 			with open("Modules//loginfo.txt","r") as f:
 				logged = f.read().split(",")
-			self.upload_image_details = [logged[7],args[0]]
-			self.file_manager.close()
-			self.upload_profile_photo(self.upload_image_details[0],self.upload_image_details[1])
+				self.upload_image_details = [logged[7],path[0]]
+				self.upload_profile_photo(self.upload_image_details[0],self.upload_image_details[1])		
 		else:
 			toast("noting selected.")
 		#self.upload_profile_photo(logged[7],args[0])

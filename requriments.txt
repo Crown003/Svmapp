@@ -1,7 +1,7 @@
 akivymd==1.2.1
 DateTime==4.4
-Kivy
-kivymd
+Kivy==2.0.0
+kivymd==0.104.0
 KivyMD-Components==0.1.6
 kivymd-extensions==1.0.0
 kivymd-extensions.akivymd==1.2.6
