@@ -20,7 +20,7 @@ from kivy import platform
 import plyer
 from PIL import Image
 
-#this thread for making fownloading process in background.
+#this thread for making process in background.
 multitasking.set_max_threads(10)
 
 if  platform == "android":
