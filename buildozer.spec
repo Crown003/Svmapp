@@ -37,7 +37,7 @@ version = 0.0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements =  python3,multitasking,threading,jnius,Kivy==2.0.0,akivymd==1.2.1,android==1.0,DateTime==4.4,kivymd==0.104.2,KivyMD-Components==0.1.6,kivymd-extensions==1.0.0,kivymd-extensions.akivymd==1.2.6,pillow==9.0.0,plyer==2.0.0,pymongo==3.12.1,requests==2.23.0
+requirements =  python3,multitasking,jnius,Kivy==2.0.0,akivymd==1.2.1,android==1.0,DateTime==4.4,kivymd==0.104.2,KivyMD-Components==0.1.6,kivymd-extensions==1.0.0,kivymd-extensions.akivymd==1.2.6,pillow==9.0.0,plyer==2.0.0,pymongo==3.12.1,requests==2.23.0
 
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
