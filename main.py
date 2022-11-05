@@ -10,7 +10,6 @@ from kivymd_extensions.akivymd.uix.charts import AKBarChart
 from libs.Widget.sqrCard import Icons
 from Modules.db import download_file,collection
 from libs.root import Root
-import threading
 from kivymd.uix.dialog import MDDialog
 from kivy.uix.image import Image, CoreImage
 import io
@@ -51,8 +50,8 @@ class Main(MDApp):
 		def build(self):
 			self.theme_cls.primary_palette = "Pink"
 			self.root = Root()
-			self.root.load_screen("LoginPage")
 			self.root.load_screen("Home")
+			self.root.load_screen("LoginPage")
 			self.root.load_screen("Profile")
 			self.root.load_screen("Teachers_interface")
 		def on_start(self):
