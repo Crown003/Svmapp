@@ -163,7 +163,7 @@ class Main(MDApp):
 				from os import getcwd as cwd
 				a = cwd() + "/Notes/"+ name_of_file + ".pdf"
 				if platform == "android":
-					PdfView(a)#"/storage/emulated/0/MyApp/Notes/"+ name_of_file + ".pdf")
+					PdfView(a)#"/storage/emulated/00/MyApp/Notes/"+ name_of_file + ".pdf")
 				else:
 					import webbrowser as webb
 					webb.open_new(a)#"/storage/emulated/0/MyApp/Notes/"+name_of_file+".pdf")

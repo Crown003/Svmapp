@@ -44,11 +44,82 @@
 					line_color_focus:get_color_from_hex("000000")
 				AnchorLayout:
 					anchor_x:"left"
+					padding:15
 					MDFillRoundFlatButton:
+						id:search_btn
 						text:"[b]search[/b]"
 						theme_text_color:"Custom"
 						user_font_size:"25sp"
 						ripple_scale:.3
 						text_color:get_color_from_hex("#ffffff")
-						md_bg_color:get_color_from_hex("#1c39bb")
+						md_bg_color_disabled:get_color_from_hex("#1c39bb60")
+						text_color_disabled:[.1,.1,.1,1]
+						md_bg_color:get_color_from_hex("#1c39bb") if search_btn.disabled == False else get_color_from_hex("#1c39bb60") 
+						disabled:False
+						on_release:
+							loading_label.text = "loading"
+							search_btn.disabled = True
+							root.get_student_to_remove(StuEnrollmentNumber.text)
+				MDGridLayout:
+					cols:1
+					size_hint:1,None
+					pos_hint:{"top":.9}
+					height:self.minimum_height
+					spacing:"120px"
+					padding:10
+					MDLabel:
+						id:loading_label
+						text:""					
+						text_color:0,0,0,1
+						font_name:"Ubuntu/Ubuntu-Medium"
+						theme_text_color:"Custom"
+						halign:"center"
+					
+					MDLabel:
+						id:name_stu
+						halign:"center"
+						text:""
+						text_color:0,0,0,1
+						font_name:"Ubuntu/Ubuntu-Medium"
+						theme_text_color:"Custom"
+						
+					MDLabel:
+						id:class_stu
+						halign:"center"
+						text:""
+						text_color:0,0,0,1
+						font_name:"Ubuntu/Ubuntu-Medium"
+						theme_text_color:"Custom"
+						
+					MDLabel:
+						id:email_stu
+						halign:"center"
+						text:""
+						text_color:0,0,0,1
+						font_name:"Ubuntu/Ubuntu-Medium"
+						theme_text_color:"Custom"
+					AnchorLayout:
+						anchor_x:"center"
+						MDFillRoundFlatIconButton:
+							id:del_btn
+							icon:"delete"
+							text:"Delete this student."
+							theme_text_color:"Custom"
+							text_color:1,0,0,1
+							icon_color:1,0,0,1
+							md_bg_color:.9,.9,.9,1
+							opacity:0
+							disabled:True if del_btn.opacity ==0 else False
+							on_release:
+								root.del_student(StuEnrollmentNumber.text)	
+					MDLabel:
+						pos_hint:{"center_y":1,"center_x":.5}
+						halign:"center"
+						markup:True
+						text:"[color=#ff0000][b]NOTE: [/b] After deleting,Student's data will be lost permanently.[/color]"
+						
+						
+						
+						
+						
 			

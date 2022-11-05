@@ -44,5 +44,8 @@ class LoginPage(Screen):
 				else:
 					toast("No user found with given credentials.")
 			except Exception as e:
-				print("from login: ",e)
-				toast(text="Oops ! something went wrong please check your conection or try again later.")
+				if e == "HTTPSConnectionPool(host='google.com', port=443): Read timed out. (read timeout=5)":
+					toast(text="Please check your internet connection !!",gravity=80)
+				else:
+					print("from login: ",e)
+					toast(text="Oops ! something went wrong please check your conection or try again later.")
